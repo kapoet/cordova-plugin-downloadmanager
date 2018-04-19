@@ -50,7 +50,7 @@ public class DownloadManager extends CordovaPlugin {
             //Set a description of this download, to be displayed in notifications (if enabled)
             request.setDescription("DataSync File Download.");
             //Set the local destination for the downloaded file to a path within the application's external files directory            
-            request.setDestinationInExternalFilesDir(cordova.getActivity().getApplicationContext(), Environment.DIRECTORY_DOWNLOADS, filename);
+            request.setDestinationInExternalFilesDir(Environment.DIRECTORY_DOWNLOADS, filename);
             //Set visiblity after download is complete
             request.setNotificationVisibility(android.app.DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
             long downloadReference = downloadManager.enqueue(request);
